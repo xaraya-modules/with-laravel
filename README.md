@@ -4,7 +4,7 @@ This is a basic [Laravel Framework](https://laravel.com/docs/11.x/installation) 
 
 Note: the **namespace** was changed from `App\` to `Xaraya\LaravelApp\` to avoid conflicts on loading with third party frameworks
 
-To handle /webhook/`hello-laravel` requests:
+To handle `/webhook/hello-laravel` requests:
 1. app/WebhookClients/: `hello` [signature validator](./app/WebhookClients/AnySignatureValidator.php)
 2. app/WebhookClients/: `any` [webhook profile](./app/WebhookClients/AnyWebhookProfile.php) (optional)
 3. app/WebhookClients/: `any` [webhook response](./app/WebhookClients/AnyWebhookResponse.php) (optional)
