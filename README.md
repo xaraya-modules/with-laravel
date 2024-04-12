@@ -10,6 +10,7 @@ To handle `/webhook/hello-laravel` requests:
 3. app/WebhookClients/: `any` [webhook response](./app/WebhookClients/AnyWebhookResponse.php) (optional)
 4. app/Jobs/: `hello` [process webhook job](./app/Jobs/ProcessWebhookJob.php)
 5. config/webhook-client.php: `default` [webhook client config](./config/webhook-client.php)
-6. routes/web.php: `hello-laravel` [webhook routing](./routes/web.php)
+6. bootstrap/app.php: `webhook` [route group](./bootstrap/app.php)
+7. routes/webhooks.php: `hello-laravel` [webhook route](./routes/webhooks.php)
 
 You could use one of the many [existing packages](https://packagist.org/packages/spatie/laravel-webhook-client/dependents?order_by=downloads) to process webhook calls from other providers
