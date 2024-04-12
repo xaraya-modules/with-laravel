@@ -1,8 +1,10 @@
 {
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "name": "xaraya/with-laravel",
+    "type": "xaraya-module",
+    "description": "Integrate Xaraya with Laravel applications",
+    "homepage": "https://github.com/xaraya-modules/with-laravel",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "license": "MIT",
     "require": {
         "php": "^8.2",
@@ -61,7 +63,5 @@
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
         }
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    }
 }
