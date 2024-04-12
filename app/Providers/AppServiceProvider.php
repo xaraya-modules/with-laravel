@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Xaraya\LaravelApp\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

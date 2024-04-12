@@ -1,6 +1,6 @@
 <?php
 
-namespace App\SignatureValidator;
+namespace Xaraya\LaravelApp\WebhookClients;
 
 use Illuminate\Http\Request;
 use Spatie\WebhookClient\WebhookConfig;
@@ -10,7 +10,7 @@ class AnySignatureValidator implements Validator
 {
     public function isValid(Request $request, WebhookConfig $config): bool
     {
-        //
+        // ...
         return true;
     }
 }

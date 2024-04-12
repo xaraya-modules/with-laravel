@@ -26,17 +26,19 @@ return [
              * It should implement \Spatie\WebhookClient\SignatureValidator\SignatureValidator
              */
             //'signature_validator' => \Spatie\WebhookClient\SignatureValidator\DefaultSignatureValidator::class,
-            'signature_validator' => \App\SignatureValidator\AnySignatureValidator::class,
+            'signature_validator' => \Xaraya\LaravelApp\WebhookClients\AnySignatureValidator::class,
 
             /*
              * This class determines if the webhook call should be stored and processed.
              */
-            'webhook_profile' => \Spatie\WebhookClient\WebhookProfile\ProcessEverythingWebhookProfile::class,
+            //'webhook_profile' => \Spatie\WebhookClient\WebhookProfile\ProcessEverythingWebhookProfile::class,
+            'webhook_profile' => \Xaraya\LaravelApp\WebhookClients\AnyWebhookProfile::class,
 
             /*
              * This class determines the response on a valid webhook call.
              */
-            'webhook_response' => \Spatie\WebhookClient\WebhookResponse\DefaultRespondsTo::class,
+            //'webhook_response' => \Spatie\WebhookClient\WebhookResponse\DefaultRespondsTo::class,
+            'webhook_response' => \Xaraya\LaravelApp\WebhookClients\AnyWebhookResponse::class,
 
             /*
              * The classname of the model to be used to store webhook calls. The class should
@@ -59,7 +61,7 @@ return [
              *
              * This should be set to a class that extends \Spatie\WebhookClient\Jobs\ProcessWebhookJob.
              */
-            'process_webhook_job' => \App\Jobs\ProcessWebhookJob::class,
+            'process_webhook_job' => \Xaraya\LaravelApp\Jobs\ProcessWebhookJob::class,
         ],
     ],
 

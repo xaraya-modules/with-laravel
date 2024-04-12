@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Jobs;
+namespace Xaraya\LaravelApp\Jobs;
 
 use Spatie\WebhookClient\Jobs\ProcessWebhookJob as SpatieProcessWebhookJob;
 

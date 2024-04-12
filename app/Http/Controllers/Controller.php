@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Xaraya\LaravelApp\Http\Controllers;
 
 abstract class Controller
 {
