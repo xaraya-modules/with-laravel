@@ -18,6 +18,10 @@ class AnyWebhookResponse implements RespondsToWebhook
             } else {
                 $data = ['message' => 'ok'];
             }
+            $type = 'hello';
+            $name = $request->get('name', 'laravel');
+            $data[$type] ??= rawurlencode($name);
+            $data['method'] ??= $request->getMethod();
             return response()->json($data);
         }
         return response()->json(['message' => 'ok']);
