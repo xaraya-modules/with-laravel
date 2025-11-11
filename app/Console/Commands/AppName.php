@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @see https://gist.github.com/isluewell/b824c0aef32f5007170fcd0d8498b657
  */
@@ -111,13 +112,13 @@ class AppName extends Command
     protected function replaceNamespace($path)
     {
         $search = [
-            'namespace '.$this->currentRoot.';',
-            $this->currentRoot.'\\',
+            'namespace ' . $this->currentRoot . ';',
+            $this->currentRoot . '\\',
         ];
 
         $replace = [
-            'namespace '.$this->argument('name').';',
-            $this->argument('name').'\\',
+            'namespace ' . $this->argument('name') . ';',
+            $this->argument('name') . '\\',
         ];
 
         $this->replaceIn($path, $search, $replace);
@@ -131,15 +132,15 @@ class AppName extends Command
     protected function setBootstrapNamespaces()
     {
         $search = [
-            $this->currentRoot.'\\Http',
-            $this->currentRoot.'\\Console',
-            $this->currentRoot.'\\Exceptions',
+            $this->currentRoot . '\\Http',
+            $this->currentRoot . '\\Console',
+            $this->currentRoot . '\\Exceptions',
         ];
 
         $replace = [
-            $this->argument('name').'\\Http',
-            $this->argument('name').'\\Console',
-            $this->argument('name').'\\Exceptions',
+            $this->argument('name') . '\\Http',
+            $this->argument('name') . '\\Console',
+            $this->argument('name') . '\\Exceptions',
         ];
 
         $this->replaceIn($this->getBootstrapPath(), $search, $replace);
@@ -165,13 +166,13 @@ class AppName extends Command
     protected function setAppConfigNamespaces()
     {
         $search = [
-            $this->currentRoot.'\\Providers',
-            $this->currentRoot.'\\Http\\Controllers\\',
+            $this->currentRoot . '\\Providers',
+            $this->currentRoot . '\\Http\\Controllers\\',
         ];
 
         $replace = [
-            $this->argument('name').'\\Providers',
-            $this->argument('name').'\\Http\\Controllers\\',
+            $this->argument('name') . '\\Providers',
+            $this->argument('name') . '\\Http\\Controllers\\',
         ];
 
         $this->replaceIn($this->getConfigPath('app'), $search, $replace);
@@ -186,8 +187,8 @@ class AppName extends Command
     {
         $this->replaceIn(
             $this->getConfigPath('auth'),
-            $this->currentRoot.'\\User',
-            $this->argument('name').'\\User'
+            $this->currentRoot . '\\User',
+            $this->argument('name') . '\\User'
         );
     }
 
@@ -200,8 +201,8 @@ class AppName extends Command
     {
         $this->replaceIn(
             $this->getConfigPath('services'),
-            $this->currentRoot.'\\User',
-            $this->argument('name').'\\User'
+            $this->currentRoot . '\\User',
+            $this->argument('name') . '\\User'
         );
     }
 
@@ -214,8 +215,8 @@ class AppName extends Command
     {
         $this->replaceIn(
             $this->getComposerPath(),
-            str_replace('\\', '\\\\', $this->currentRoot).'\\\\',
-            str_replace('\\', '\\\\', $this->argument('name')).'\\\\'
+            str_replace('\\', '\\\\', $this->currentRoot) . '\\\\',
+            str_replace('\\', '\\\\', $this->argument('name')) . '\\\\'
         );
     }
 
@@ -234,7 +235,8 @@ class AppName extends Command
         foreach ($files as $file) {
             $this->replaceIn(
                 $file->getRealPath(),
-                $this->currentRoot, $this->argument('name')
+                $this->currentRoot,
+                $this->argument('name')
             );
         }
     }
@@ -261,7 +263,7 @@ class AppName extends Command
      */
     protected function getBootstrapPath()
     {
-        return $this->laravel->bootstrapPath().'/app.php';
+        return $this->laravel->bootstrapPath() . '/app.php';
     }
 
     /**
@@ -282,7 +284,7 @@ class AppName extends Command
      */
     protected function getConfigPath($name)
     {
-        return $this->laravel['path.config'].'/'.$name.'.php';
+        return $this->laravel['path.config'] . '/' . $name . '.php';
     }
 
     /**
